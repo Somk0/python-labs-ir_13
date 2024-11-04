@@ -17,7 +17,7 @@ class Printer:
     
 
     def __str__(self):
-        return f"Притер {self.__name} за ціною {self.__price} надрукував {self.__pages} сторінок зі швидкістю {self.__speed} сторінок за хвилину"
+        return f"Принтер {self.__name} за ціною {self.__price} надрукував {self.__pages} сторінок зі швидкістю {self.__speed} сторінок за хвилину"
     
     def __repr__(self):
         return f"self.__name = {self.__name},\nself.__speed = {self.__speed},\nself.__price = {self.__price}"
@@ -27,71 +27,54 @@ class Printer:
         print(f"Deleted {self.__name}")
     
 
-    def getName(self):
+    def get_name(self):
         return self.__name
 
-    def getPrice(self):
+    def get_price(self):
         return self.__price
 
-    def getSpeed(self):
+    def get_speed(self):
         return self.__speed
 
-    def getPages(self):
+    def get_pages(self):
         return self.__pages
         
 
-    def setName(self, __name):
+    def set_name(self, __name):
         self.__name = __name
         
-    def setPrice(self, __price):
+    def set_price(self, __price):
         self.__price = __price
 
-    def setSpeed(self, __speed):
+    def set_speed(self, __speed):
         self.__speed = __speed
 
-    def setPages(self, __pages):
+    def set_pages(self, __pages):
         self.__pages = __pages
         
-    def getAllInfo(self):
+    def get_all_info(self):
 
-        return [self.getName(), self.getPrice(), self.getSpeed(), self.getPages()]
+        return [self.get_name(), self.get_price(), self.get_speed(), self.get_pages()]
         
 
-    
-    
-
-
-    
-
-
-
-
-    
-        
 def main():
         prnt1 = Printer("Neo2000", 42.50, 20, 100)
         prnt2 = Printer("Neo2001", 55, 25, 124)
         prnt3 = Printer("Neo2002", 60, 40, 345)
 
-        # prnt1.getAllInfo()
-        # prnt2.getAllInfo()
-        # prnt3.getAllInfo()
-        # print(Printer)
-    
-        
 
 prnt1 = Printer("Neo2000", 42.50, 20, 100)
 prnt2 = Printer("Neo2001", 55, 25, 124)
 prnt3 = Printer("Neo2002", 60, 40, 345)
 
-prnt1.setPages(999)
+prnt1.set_pages(999)
 
 
 
 obj_ls = [prnt1, prnt2, prnt3]
 
 
-def Printer_with_MinPages(objects):
+def get_printer_with_min_pages(objects):
         
         x = float('inf')
         results = []
@@ -99,16 +82,12 @@ def Printer_with_MinPages(objects):
 
         for obj in objects:
             
-            if obj.getPages() < x:
-                x = obj.getPages()
+            if obj.get_speed() < x:
+                x = obj.get_speed()
 
             
                 results = obj
 
-            
         return results
-        
-        
-
 
 print(Printer_with_MinPages(obj_ls))
